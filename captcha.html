@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.div{
+			display: :flex;
+			justify-content: center;
+			margin-top: 20px;
+		}
+
+		#capt{
+			width: 170px;
+			height: 72px;
+			font-size: 37px;
+			background-color: #2c31cf;
+			padding: 5px;
+			border: none;
+			letter-spacing: 1px;
+			float: left;
+			color: #e9e1d;
+			border-radius: 10px 0 0 10px;
+		}
+		#refresh{
+			float: left;
+			background-color: #2c31cf;
+			height: 82px;
+			border-radius: 0 10px 10px 0;
+		}
+
+		#refresh img{
+			margin-top: 20px;
+			margin-right: 1px;
+			cursor: pointer;
+		}
+
+		#textinput{
+			width: 170px;
+			height: 70px;
+			font-size: 37px;
+			background-color: #252521;
+			border: none;
+			margin-left: 10px;
+			border-radius: 10px;
+			padding: 5px;
+			color: #d58a1e;
+		}
+
+		.div button{
+			padding: 8px 20px;
+			height: 35px;
+			cursor: pointer;
+			border-radius: 10px;
+			margin-left: 10px;
+			margin-top: 25px;k
+			background-color: #764d11;
+			color: #ced4f0;
+			transition: .5s;
+		}
+	</style>
+</head>
+<body onload="cap()">
+	<div class="div">
+		<input type="text" id="capt" readonly>
+		<div id="refresh"><img src="refresh.png" width="50px" onclick="cap()"></div>
+
+		<input type="text" id="textinput">
+		<button onclick="valcap()">Submit</button>
+		
+
+	</div>
+
+	<script type="text/javascript">
+		function cap()
+		{
+			var alpha=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+			var a=alpha[Math.floor(Math.random()*62)];
+			var b=alpha[Math.floor(Math.random()*62)];
+			var c=alpha[Math.floor(Math.random()*62)];
+			var d=alpha[Math.floor(Math.random()*62)];
+			var e=alpha[Math.floor(Math.random()*62)];
+			var f=alpha[Math.floor(Math.random()*62)];
+
+			/*document.write(a);
+			document.write(b);
+			document.write(d);
+			document.write(e);
+			document.write(c);
+			document.write(f);*/
+
+
+
+			var sum=a+b+c+d+e+f;
+
+			//document.write(sum);
+
+			document.getElementById("capt").value=sum;
+		}
+
+
+		function valcap(){
+			var str1=document.getElementById('capt').value;
+			var str2=document.getElementById('textinput').value
+			if (str1==str2)
+			{
+				alert("Successfully");
+				return true;
+			}
+			else
+			{
+				alert("please enter a valid captacha");
+				return false;
+			}
+
+		}
+	</script>
+
+</body>
+</html>
